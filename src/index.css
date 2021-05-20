@@ -7,6 +7,11 @@
   color: #393c41;
 }
 
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
 body {
   width: 100%;
   overflow-x: hidden;

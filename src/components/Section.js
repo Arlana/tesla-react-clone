@@ -1,28 +1,34 @@
 import React from 'react';
 import styled from "styled-components";
+import Fade from "react-reveal/Fade";
+// import Header from './Header';
 
 function Section({title, description, leftBtnText, rightBtnText, backgroundImg}) {
     // console.log(props);
     return (
         <Wrap bgImg ={backgroundImg}>
-            <ItemText>
-                <h1>{ title }</h1>
-                <p>{ description }</p>
-            </ItemText>
+
+            <Fade bottom>
+                <ItemText>
+                    <h1>{ title }</h1>
+                    <p>{ description }</p>
+                </ItemText>
+            </Fade>
 
             <Buttons>
-                <ButtonGroup>
-                    <LeftBtn>
-                        { leftBtnText }
-                    </LeftBtn>
-                    {rightBtnText && 
-                    <RightBtn>
-                        { rightBtnText }
-                    </RightBtn>
-                    }
-                    
-                </ButtonGroup>
 
+                <Fade bottom>
+                    <ButtonGroup>
+                        <LeftBtn>
+                            { leftBtnText }
+                        </LeftBtn>
+                        {rightBtnText && 
+                        <RightBtn>
+                            { rightBtnText }
+                        </RightBtn>
+                        }
+                    </ButtonGroup>
+                </Fade>
                 <DownArrow src="/images/down-arrow.svg" />
             </Buttons>
             
@@ -33,6 +39,7 @@ function Section({title, description, leftBtnText, rightBtnText, backgroundImg})
 export default Section;
 
 const Wrap = styled.div `
+    z-index: 10;
     width: 100vw;
     height: 100vh;
     // background: darkblue;
@@ -44,6 +51,7 @@ const Wrap = styled.div `
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+ 
 `
 const ItemText = styled.div`
     padding-top: 15vh;
